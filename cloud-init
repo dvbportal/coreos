@@ -1,0 +1,30 @@
+#cloud-config
+
+coreos:
+  units:
+    - name: docker-tcp.socket
+      command: start
+      enable: true
+      content: |
+        [Unit]
+        Description=Docker Socket for the API
+
+        [Socket]
+        ListenStream=2375
+        BindIPv6Only=both
+        Service=docker.service
+
+        [Install]
+        WantedBy=sockets.target
+
+    - name: var-lib-docker.mount
+      command: start
+      content: |
+        [Unit]
+        Description=Mount ephemeral to /var/lib/docker
+        Before=docker.service
+
+        [Mount]
+        What=/dev/vda
+        Where=/var/lib/docker
+        Type=ext4
