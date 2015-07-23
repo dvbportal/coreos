@@ -39,3 +39,43 @@ The output should look like this:
     Update Strategy: No Reboots
     Last login: Thu Jul 23 09:10:25 +0000 2015 on /dev/tty1.
     core@localhost ~ $
+
+## Run Docker
+
+After CoreOS has booted run the following command to check if Docker is running ok:
+
+    $ docker version
+    Client version: 1.6.2
+    Client API version: 1.18
+    Go version (client): go1.4.2
+    Git commit (client): 7c8fca2
+    OS/Arch (client): darwin/amd64
+    Server version: 1.6.2
+    Server API version: 1.18
+    Go version (server): go1.4.2
+    Git commit (server): 7c8fca2-dirty
+    OS/Arch (server): linux/amd64
+    
+## Start a container
+
+Now its time to start a container.
+
+    $ docker run -it hello-world
+    Hello from Docker.
+    This message shows that your installation appears to be working correctly.
+    
+    To generate this message, Docker took the following steps:
+     1. The Docker client contacted the Docker daemon.
+     2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+        (Assuming it was not already locally available.)
+     3. The Docker daemon created a new container from that image which runs the
+        executable that produces the output you are currently reading.
+     4. The Docker daemon streamed that output to the Docker client, which sent it
+        to your terminal.
+    
+    To try something more ambitious, you can run an Ubuntu container with:
+     $ docker run -it ubuntu bash
+    
+    For more examples and ideas, visit:
+     http://docs.docker.com/userguide/
+     
