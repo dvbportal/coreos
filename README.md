@@ -12,6 +12,7 @@ CoreOS runs on OS X using the built-in hypervisor using xhyve. To start CoreOS r
     sudo ./boot -fcloud.conf coreos
     
 The output should look like this:
+    
     ...    
              Starting Network Name Resolution...
     [  OK  ] Started Network Name Resolution.
